@@ -1,18 +1,9 @@
-# Streamlit
-streamlit==1.48.1
-
-# LangChain 0.2 라인으로 통일
-langchain==0.2.12
-langchain-community==0.2.12
-langchain-openai==0.1.22
-langchain-text-splitters==0.2.4
-# langchain-core는 별도 고정하지 마세요 (langchain가 맞는 버전 끌어옵니다)
-
-# Chroma (langchain-chroma 0.1.4 제약 충족)
-langchain-chroma==0.1.4
-chromadb==0.5.12   # (또는 0.5.7, 0.5.10, 0.5.15 등 <0.6.0 이면 OK, 0.5.4/0.5.5만 피하기)
-
-# PDF
-pypdf==6.0.0
-
-# (권장) 제거: pysqlite3-binary  ← 스트림릿 환경에서 내장 sqlite와 충돌 가능성. 특별한 이유 없으면 빼세요.
+streamlit
+langchain
+langchain-community
+langchain-openai
+langchain-core
+langchain-chroma
+pysqlite3-binary
+pypdf
+langchain-text-splitters
