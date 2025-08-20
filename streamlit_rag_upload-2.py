@@ -12,23 +12,7 @@ from langchain_core.output_parsers import StrOutputParser
 
 import chromadb
 
-# ✅ EphemeralClient 사용 (Streamlit Cloud에서 권장)
-client = chromadb.EphemeralClient()
 
-# Chroma 벡터스토어 초기화 시 client 명시
-vectorstore = Chroma(
-    client=client,
-    collection_name="my_collection"
-)
-
-# Chroma 배포 시 sqlite3 관련 의존성 문제 해결 코드
-#__import__('pysqlite3')
-#import sys
-#sys.modules['sqlite3']=sys.modules.pop('pysqlite3')
-
-# API key 탈취 우려 있으므로 보안 조치
-#from langchain_chroma import Chroma
-#os.environ["OPENAI_API_KEY"]=st.secrets['OPENAI_API_KEY']
 
 
 #Chroma tenant 오류 방지 위한 코드
@@ -115,6 +99,7 @@ if uploaded_file is not None:
                 st.session_state.messages.append({"role": "assistant", "content": response})
                 st.write(response)
                 
+
 
 
 
