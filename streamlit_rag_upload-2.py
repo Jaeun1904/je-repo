@@ -1,3 +1,12 @@
+# --- SQLite shim: use pysqlite3-binary instead of built-in sqlite3 ---
+import sys
+try:
+    import pysqlite3  # provided by pysqlite3-binary
+    sys.modules["sqlite3"] = sys.modules.pop("pysqlite3")
+except Exception:
+    pass
+# ----------------------------------------------------------------------
+
 import os
 import streamlit as st
 import tempfile
@@ -10,13 +19,12 @@ from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.runnables import RunnablePassthrough
 from langchain_core.output_parsers import StrOutputParser
 
-import chromadb
-
-
+import langchain, chromadb, sqlite3
+langchain.__version__, chromadb.__version__, sqlite3.sqlite_version
 
 
 #Chroma tenant 오류 방지 위한 코드
-import chromadb
+#import chromadb
 chromadb.api.client.SharedSystemClient.clear_system_cache()
 
 
@@ -99,6 +107,7 @@ if uploaded_file is not None:
                 st.session_state.messages.append({"role": "assistant", "content": response})
                 st.write(response)
                 
+
 
 
 
