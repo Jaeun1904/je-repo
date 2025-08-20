@@ -25,7 +25,7 @@ langchain.__version__, chromadb.__version__, sqlite3.sqlite_version
 
 #Chroma tenant 오류 방지 위한 코드
 #import chromadb
-chromadb.api.client.SharedSystemClient.clear_system_cache()
+#chromadb.api.client.SharedSystemClient.clear_system_cache()
 
 
 #cache_resource로 한번 실행한 결과 캐싱해두기
@@ -107,6 +107,7 @@ if uploaded_file is not None:
                 st.session_state.messages.append({"role": "assistant", "content": response})
                 st.write(response)
                 
+
 
 
 
