@@ -1,12 +1,21 @@
-streamlit
-chromadb==0.5.5
+# Streamlit
+streamlit==1.48.1
+
+# LangChain 0.2 계열로 버전대 맞추기
 langchain==0.2.11
-langchain-community
-langchain-openai
-langchain-core
+langchain-core==0.2.43
+langchain-community==0.2.11
+langchain-openai==0.1.22
+langchain-text-splitters==0.2.4
+
+# 벡터DB (langchain-chroma 0.1.4가 허용하는 범위에서 0.5.6로 지정)
 langchain-chroma==0.1.4
-pysqlite3-binary
-pypdf
-langchain-text-splitters
+chromadb==0.5.6
+
+# 기타
+pypdf==6.0.0
+# pysqlite3-binary  ← 필요 없으면 빼세요 (권장: 삭제)
+
+
 
 
